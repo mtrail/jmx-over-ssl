@@ -51,6 +51,10 @@ Java comes with a out-of-the-box JMX server for the JVM, backed by the
 You can create your own mbeanserver and setup your custom JMXConnectorServer for it.
 This is demonstrated in [JmxServerProcess.java](jmx-over-ssl/src/jmxoverssl/JmxServerProcess.java).
 
+Note that if you create the JMX server programmatically many of the documented
+system properties for JMX do not apply, as they are only evaluated by the platform
+JMX server (for example `"com.sun.management.jmxremote.ssl.need.client.auth"`).
+
 
 ## JMX over SSL
 
@@ -64,6 +68,9 @@ connection. Therefore the server needs to trust itself. The script
 client and server.
 
 The implementation of a JMX server with SSL encryption is here [JmxServerProcessSSL.java](jmx-over-ssl/src/jmxoverssl/JmxServerProcessSSL.java)
+
+Having client side authentication with SSL certificates is optional. You can
+disable this in the example code above when you set the field `requiteClientCertificate` to `false`.
 
 
 ## Connecting to a JMX Server with SSL

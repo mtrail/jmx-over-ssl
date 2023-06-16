@@ -38,6 +38,8 @@ public class JmxServerProcessSSL {
 	int rmiDataPort = 2099;
 	String rmiName = "jmxrmi";
 
+	boolean requiteClientCertificate = true;
+
 	private SslRMIClientSocketFactory clientSocketFactory;
 	private SslRMIServerSocketFactory serverSocketFactory;
 
@@ -60,7 +62,7 @@ public class JmxServerProcessSSL {
 		System.setProperty("javax.net.ssl.trustStorePassword", "password");
 
 		clientSocketFactory = new SslRMIClientSocketFactory();
-		serverSocketFactory = new SslRMIServerSocketFactory();
+		serverSocketFactory = new SslRMIServerSocketFactory(null, null, requiteClientCertificate);
 	}
 
 	void startRegistry() throws RemoteException {
