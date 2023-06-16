@@ -1,8 +1,10 @@
 # JMX over SSL
 
-This repository contains example code and explanations about
+_© 2023 mtrail GmbH, [CC-BY-SA4.0](LICENSE)_
+
+> **This repository contains example code and explanations about
 [JMX](https://docs.oracle.com/en/java/javase/11/management/monitoring-and-management-using-jmx-technology.html)
-in general as well specific considerations for usage with SSL/TLS.
+in general as well specific considerations for usage with SSL/TLS.**
 
 
 ## JMX over RMI protocol
