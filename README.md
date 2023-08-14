@@ -10,7 +10,7 @@ in general as well specific considerations for usage with SSL/TLS.**
 ## JMX over RMI protocol
 
 The standard protocol implementation for JMX is RMI. The RMI communication is
-based in TCP/IP and and requires two server side ports.
+based on TCP/IP and requires two server side ports.
 
   * RMI Registry (default port 1099)
   * JMX Server (arbitrary port)
@@ -48,9 +48,9 @@ for the `JConsole` client can be abbreviated to
 ## Creating a JMX Server Programmatically
 
 Java comes with a out-of-the-box JMX server for the JVM, backed by the
-[platform mbeanserver](https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ManagementFactory.html#getPlatformMBeanServer()).
+[platform MBeanServer](https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ManagementFactory.html#getPlatformMBeanServer()).
 
-You can create your own mbeanserver and setup your custom JMXConnectorServer for it.
+You can create your own MBeanServer and setup your custom JMXConnectorServer for it.
 This is demonstrated in [JmxServerProcess.java](jmx-over-ssl/src/jmxoverssl/JmxServerProcess.java).
 
 Note that if you create the JMX server programmatically many of the documented
@@ -72,7 +72,7 @@ client and server.
 The implementation of a JMX server with SSL encryption is here [JmxServerProcessSSL.java](jmx-over-ssl/src/jmxoverssl/JmxServerProcessSSL.java)
 
 Having client side authentication with SSL certificates is optional. You can
-disable this in the example code above when you set the field `requiteClientCertificate` to `false`.
+disable this in the example code above when you set the field `requireClientCertificate` to `false`.
 
 
 ## Connecting to a JMX Server with SSL
@@ -90,7 +90,7 @@ This implementation needs to be on the class path at a specific name (`...rmi.Cl
 and addressed with the system property `jmx.remote.protocol.provider.pkgs` set to the parent package.
 
 
-## Troubeshooting
+## Troubleshooting
 
 Exceptions and error messages are very confusing and often hide the actual cause.
 The only chance in such cases is to debug the JMX implementation and find the
